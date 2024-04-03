@@ -1,7 +1,7 @@
 import os
+
 import boto3
 import botocore.exceptions
-
 
 grafana_client = boto3.client("grafana")
 secretsmanager_client = boto3.client("secretsmanager")
