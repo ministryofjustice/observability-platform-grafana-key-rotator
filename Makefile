@@ -6,13 +6,13 @@ test: build
 build:
 	@ARCH=`uname -m`; \
 	case $$ARCH in \
-	x86_64) \
-		echo "Building for x86_64 architecture"; \
-		docker build --platform linux/amd64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
+	aarch64) \
+		echo "Building for aarch64 architecture"; \
+		docker build --platform linux/aarch64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
 	arm64) \
 		echo "Building for ARM64 architecture"; \
 		docker build --platform linux/arm64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
 	*) \
-		echo "Unsupported architecture: $$ARCH"; \
-		exit 1 ;; \
+		echo "Architecture: $$ARCH"; \
+		docker build --file Dockerfile --tag $(IMAGE_NAME) . ;; \
 	esac
