@@ -6,12 +6,9 @@ test: build
 build:
 	@ARCH=`uname -m`; \
 	case $$ARCH in \
-	aarch64) \
+	aarch64 | arm64) \
 		echo "Building for aarch64 architecture"; \
-		docker build --platform linux/aarch64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
-	arm64) \
-		echo "Building for ARM64 architecture"; \
-		docker build --platform linux/arm64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
+		docker build --platform linux/amd64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
 	*) \
 		echo "Architecture: $$ARCH"; \
 		docker build --file Dockerfile --tag $(IMAGE_NAME) . ;; \
