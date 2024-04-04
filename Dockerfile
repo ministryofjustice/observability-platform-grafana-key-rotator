@@ -16,4 +16,4 @@ python -m pip install --no-cache-dir --requirement requirements-pip.txt
 python -m pip install --no-cache-dir --requirement requirements.txt
 EOF
 
-CMD ["function.handler"]
+CMD ["function.lambda_handler"]
