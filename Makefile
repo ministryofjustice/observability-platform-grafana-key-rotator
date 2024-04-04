@@ -7,9 +7,9 @@ build:
 	@ARCH=`uname -m`; \
 	case $$ARCH in \
 	aarch64 | arm64) \
-		echo "Building for aarch64 architecture"; \
+		echo "Building for $$ARCH architecture"; \
 		docker build --platform linux/amd64 --file Dockerfile --tag $(IMAGE_NAME) . ;; \
 	*) \
-		echo "Architecture: $$ARCH"; \
+		echo "Building for $$ARCH architecture"; \
 		docker build --file Dockerfile --tag $(IMAGE_NAME) . ;; \
 	esac
