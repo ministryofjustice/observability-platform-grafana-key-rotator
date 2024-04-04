@@ -1,0 +1,12 @@
+---
+schemaVersion: 2.0.0
+
+fileExistenceTests:
+  - name: "function.py"
+    path: "/var/task/function.py"
+
+  - name: "requirements.txt"
+    path: "/var/task/requirements.txt"
+
+  - name: "requirements-pip.txt"
+    path: "/var/task/requirements-pip.txt"
