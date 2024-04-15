@@ -9,6 +9,8 @@ LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.description="Creates or updates an API key for Amazon Managed Grafana and uploads it to AWS Secrets Manager" \
       org.opencontainers.image.url="https://github.com/ministryofjustice/observability-platform-grafana-api-key-rotator"
 
+SHELL ["/bin/bash", "-e", "-u", "-o", "pipefail", "-c"]
+
 COPY --chown=nobody:nobody --chmod=0755 src/var/task/ ${LAMBDA_TASK_ROOT}
 
 RUN <<EOF
